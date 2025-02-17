@@ -16,7 +16,9 @@ public class Usuario {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        if(nome != null){
+            this.nome = nome;
+        }
     }
 
     public int getPontuacao() {

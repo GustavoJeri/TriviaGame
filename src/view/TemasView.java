@@ -25,7 +25,9 @@ public class TemasView implements Observer {
         if (trivia.getUsuario() == null) {
             System.out.println("Qual o seu nome?");
             String nome = entrada.nextLine();
-            trivia.setUsuario(new Usuario(nome, 0));
+            Usuario usuario = new Usuario(nome, 0);
+            trivia.setUsuario(usuario);
+            trivia.getRanking().adicionarUsuario(usuario);
         }
 
         System.out.println("======= Temas =======");

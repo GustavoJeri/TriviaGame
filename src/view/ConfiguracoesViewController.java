@@ -38,7 +38,9 @@ public class ConfiguracoesViewController {
                 }
                 System.out.println("Digite o nome do novo usuário");
                 String nome = entrada.nextLine();
-                trivia.setUsuario(new Usuario(nome, 0));
+                Usuario usuario = new Usuario(nome, 0);
+                trivia.setUsuario(usuario);
+                trivia.getRanking().adicionarUsuario(usuario);
                 break;
 
             case 4:

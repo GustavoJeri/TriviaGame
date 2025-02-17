@@ -24,6 +24,13 @@ public class MenuPrincipalController {
                 ConfiguracoesView configView = new ConfiguracoesView();
                 configView.initConfiguracoesView(trivia, entrada);
                 break;
+            case 3:
+                RankingView rankingView = new RankingView();
+                rankingView.initRankingView(trivia, entrada, trivia.getRanking());
+                break;
+            case 4:
+                view.finalizar();
+                break;
         }
     }
 

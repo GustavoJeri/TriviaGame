@@ -1,12 +1,12 @@
 package model;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Trivia {
     private HashMap<String, ArrayList<Questao>> questoes;
     private ArrayList<Observer> observers;
     private Usuario usuario;
+    private Ranking ranking;
     private String dificuldadeEscolhida;
     private int numQuestoes;
     private int numTemas;
@@ -14,6 +14,7 @@ public class Trivia {
     public Trivia() {
         questoes = new HashMap<>();
         observers = new ArrayList<>();
+        ranking = new Ranking();
     }
 
     public HashMap<String, ArrayList<Questao>> getQuestoes() {
@@ -43,6 +44,14 @@ public class Trivia {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
         notifica();
+    }
+
+    public void setRanking(Ranking ranking) {
+        this.ranking = ranking;
+        notifica();
+    }
+    public Ranking getRanking() {
+        return ranking;
     }
 
     public String getDificuldadeEscolhida() {
@@ -258,4 +267,6 @@ public class Trivia {
         );
         adicionarQuestao(q10);
     }
+
+
 }
